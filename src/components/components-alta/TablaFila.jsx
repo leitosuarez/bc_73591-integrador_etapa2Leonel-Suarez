@@ -17,16 +17,24 @@ const TablaFila = ({producto}) => {
 
   return (
     <tr className='tabla-fila-alta'>
-      <td>{producto.nombre}</td>
-      <td>{producto.precio}</td>
-      <td>{producto.stock}</td>
-      <td>{producto.marca}</td>
-      <td>{producto.categoria}</td>
-      <td>{producto.detalles}</td>
-      <td>
-        <img src={producto.foto} alt={producto.nombre} style={{width: '60px'}}/>
+      <td className='tabla-fila-alta__nombre'><div>{producto.nombre}</div></td>
+      <td className='tabla-fila-alta__categoria'>
+        <div>
+          <span>
+          {producto.categoria}
+          </span>
+        </div>
       </td>
-      <td>{producto.envio ? 'Si' : 'No'}</td>
+      <td><div>{producto.precio}</div></td>
+      <td><div>{producto.stock}</div></td>
+      <td><div>{producto.marca}</div></td>
+      {/* <td>* {producto.detalles} </td> */}
+      <td className='tabla-fila-alta__foto'>
+        <div>
+          <img src={producto.foto} alt={producto.nombre} style={{width: '60px'}}/>
+        </div>
+      </td>
+      <td><div>{producto.envio ? 'Si' : 'No'}</div></td>
       <td>
         <button>
           Ver

@@ -1,0 +1,40 @@
+.tabla-fila-alta {
+    td div {
+        height: 2.7rem;
+        display: flex;
+        align-items: center; 
+        
+        
+    }
+    
+    
+    &__categoria div {
+        display: flex;
+        align-items: center;
+    }
+
+    &__categoria span {
+        text-transform: capitalize;
+        color: #3b0f10;
+        background-color: #d41c23;
+        padding: .3rem;
+        border-radius: 5px;
+
+    }
+
+    &__nombre div{ 
+        font-size: 16px;
+    }
+
+    &__foto div {
+        display: block;
+        width: 100%;
+        background-color: inherit;
+
+        img {
+            mix-blend-mode: multiply;
+        }
+    }
+   
+    
+}

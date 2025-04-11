@@ -10,11 +10,11 @@ const Tabla = () => {
       <thead>
         <tr>
           <th>Nombre</th>
+          <th>Categoria</th>
           <th>Precio</th>
           <th>Stock</th>
           <th>Marca</th>
-          <th>Categoria</th>
-          <th>Detalles</th>
+          {/* <th>Detalles</th> */}
           <th>Foto</th>
           <th>Envio</th>
           <th>Acciones</th>
