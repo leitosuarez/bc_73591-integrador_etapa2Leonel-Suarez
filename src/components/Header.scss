@@ -1,0 +1,40 @@
+/* 
+--------------------------
+HEADER
+--------------------------
+ */
+
+ .main-header {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem;
+    background-color:#18141c ;
+    
+    
+    
+
+    @media screen and (min-width: 992px) {
+        & {
+            flex-direction: column-reverse;
+            padding: 1rem 4rem; 
+        }
+        
+    }
+}
+
+#menu {
+    display: none;
+
+    /* hacer funcionar el checkboc -> hacer funcionar el menu hamburguesa */
+    &:checked + .nav-bar{    
+        display: block; 
+        
+    }
+
+    &:checked ~ .search-bar .menu-toogle .menu-toogle__label {
+        // Animacion para el menu-toggle aca
+    } 
+}
+
+
+

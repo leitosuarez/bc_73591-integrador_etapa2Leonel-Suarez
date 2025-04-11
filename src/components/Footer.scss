@@ -1,0 +1,102 @@
+.footer-section {
+    border-top: 1px solid red;
+    background-color: #18141c;
+}
+
+/* footer-categorias de informacion */
+.footer-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    padding: 4rem;
+    
+
+    &__item { 
+        max-width: 220px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+            
+
+    }
+
+    &__item h3 {
+        font-size: 22px;
+        padding-bottom: 1rem;
+    }
+
+    &__item span {
+        font-size: 13px;
+        padding-bottom: .5rem;
+    }
+
+    &__item span:hover {
+        color: gray;
+        cursor: pointer;
+    }
+
+    &__first-item div{
+        display: flex;
+        gap: 1rem;
+        
+    }
+
+    &__first-item p {
+        font-size: 13px;
+        text-align: justify;
+        padding-bottom: 1rem;
+    }
+
+    &__icono {
+        border: 2px solid #d41c23;
+        border-radius: 5px;
+        padding: .4rem;
+        width: 35px;
+        text-align: center;
+        color: #d41c23;
+    }
+
+    &__icono i {
+        align-self: center;
+        width: 100%;
+    }
+
+    &__icono:hover {
+        cursor: pointer;
+        color: #990308;
+        border: 2px solid #990308;
+    }
+
+    
+}
+
+/* footer metodos de pago y copy */
+.footer-pay-copy {
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #221b29;
+}
+
+.footer-pay, .footer-copy {
+    padding: 1rem;
+}
+
+.footer-pay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1.5rem;
+    gap: .6rem;
+}
+
+.footer-copy {
+    color: white;
+}
+
+.footer-copy span { 
+    color: gray;
+}

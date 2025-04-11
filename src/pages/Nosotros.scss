@@ -1,0 +1,138 @@
+.nosotros-section {
+    border: 2px solid #d41c23;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    background-image: linear-gradient(rgba(5,7,12,0.75), rgba(5,7,12,0.75)),
+    url('/imgs/fondo-nosotros.webp'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+
+
+/* nosotros info */
+.nosotros-info {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+
+    &__titulo  {
+        font-size: 3.7rem;
+        text-align: left;
+        border-left: .6rem solid #d41c23;
+        padding-left: .6rem;
+        max-width: 600px;
+        color: white;
+    }
+
+    &__info {
+        font-size: 2rem;
+        text-align:start;
+        color: white;
+        font-weight: 600;
+        
+    }
+
+    &__button {
+        max-width: 13rem;
+        text-align: center;
+        letter-spacing: 3px;
+        color: white;
+        background-color: #d41c23;
+        border: none;
+        font-size: 14px;
+        font-weight: 800;
+        padding: .9rem 1.6rem;
+        box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+        -webkit-box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+        -moz-box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+    }
+
+    &__button:hover {
+        cursor: pointer;
+        background-color: #990308;
+    }
+    
+    
+} 
+
+/* nosotros servicios-items */
+.nosotros-services {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    gap: 2.5rem;
+    padding-top: 1.5rem ;
+    
+
+    &__title {
+        padding-left:.6rem;
+        font-size: 3rem;
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+        font-weight: 900;
+        color: #d41c23;
+        font-style: oblique;
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        padding-bottom: 1rem;
+        
+        
+    }
+
+    &__item i {
+        color: #d41c23;
+        text-align: center;
+        align-self: center;
+    }
+
+    &__item h3 {
+        font-size: 1rem;
+        color: white;
+    }
+
+    &__item p {
+        font-size: .8rem;
+        color: white;
+        max-width: 23rem;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .nosotros-section {
+        flex-direction: row;
+    }
+
+    .nosotros-services__title {
+        padding-left: 4rem;
+    }
+
+    .nosotros-info__info {
+        max-width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1330px) {
+    .nosotros-section{
+        padding: 4rem 3rem;
+    }
+
+    .nosotros-services {
+        padding-top:3.5rem ;
+    }
+
+    .nosotros-services__title {
+        padding-left: 1.6rem;
+    }
+}

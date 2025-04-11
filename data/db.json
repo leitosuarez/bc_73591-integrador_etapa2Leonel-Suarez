@@ -1,0 +1,189 @@
+{
+  "productos": [
+    {
+      "nombre": "BMW Strom 250cc",
+      "foto": "imgs//bmw strom 250.jpg",
+      "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
+      "precio": 250.5,
+      "stock": "43",
+      "marca": "Apple",
+      "categoria": "celulares",
+      "id": "1",
+      "envio": false
+    },
+    {
+      "nombre": "Bajaj Dominar 400cc 2023",
+      "foto": "imgs/dominar 400.png",
+      "detalles": "Deportiva y touring, ideal para viajes largos con excelente potencia y confort.",
+      "precio": 240.3,
+      "stock": "4",
+      "marca": "Apple",
+      "categoria": "celulares",
+      "id": "2",
+      "envio": true
+    },
+    {
+      "nombre": "Auriculares Sony",
+      "foto": "imgs/cf-moto-600.webp",
+      "detalles": "Saepe enim ipsa facilis velit quidem voluptatibus totam dicta",
+      "precio": 985,
+      "stock": 4,
+      "marca": "Sleek Cotton Chips",
+      "categoria": "Refined",
+      "id": "3",
+      "envio": false
+    },
+    {
+      "nombre": "Camara Canon",
+      "detalles": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      "foto": "imgs/Honda CBR 600.jpg",
+      "precio": 678,
+      "stock": 7,
+      "marca": "Rustic Soft Tuna",
+      "categoria": "Generic",
+      "id": "4",
+      "envio": true
+    },
+    {
+      "nombre": "Samsung",
+      "detalles": "Facere molestiae odio neque rerum provident voluptas",
+      "foto": "imgs/honda twister cb 250.jpeg",
+      "precio": 1200,
+      "stock": 4,
+      "marca": "Samsung",
+      "categoria": "celulares",
+      "id": "5",
+      "envio": true
+    },
+    {
+      "id": "6",
+      "nombre": "Chromecast",
+      "precio": 332.22,
+      "stock": 4,
+      "marca": "Google",
+      "categoria": "Electronica",
+      "detalles": "Natus iure quasi cupiditate quisquam facere molestiae odio neque rerum provident voluptas!",
+      "foto": "imgs/honda-xr-250-tornado.webp",
+      "envio": true
+    },
+    {
+      "id": "7",
+      "nombre": "DJI Mavic 2 pro",
+      "precio": 333.22,
+      "stock": 2,
+      "marca": "DJI",
+      "categoria": "Drones",
+      "detalles": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "foto": "imgs/kawasaki ninja h2r.webp",
+      "envio": false
+    },
+    {
+      "id": "8",
+      "nombre": "Bajaj Dominar 400cc 2023",
+      "precio": "2333.2",
+      "stock": "2",
+      "marca": "Sorny",
+      "categoria": "Electro",
+      "detalles": "Piola. 8k",
+      "foto": "imgs/kawasaki z400.webp",
+      "envio": true
+    },
+    {
+      "id": "17f2",
+      "nombre": "Bajaj Dominar 400cc 2023",
+      "precio": "123.44",
+      "stock": "5",
+      "categoria": "Tecnología",
+      "detalles": "loremkimpis",
+      "marca": "apple",
+      "foto": "imgs/kawasaki z400.webp",
+      "envio": false
+    }
+  ],
+  "carrito": [
+    [
+      {
+        "nombre": "IPhone 15 Pro Max",
+        "foto": "imgs/apple-iphone-11-pro-max.jpg",
+        "detalles": "Lorem ipsum dolor sit, amet consectetur adipisicing.",
+        "precio": 250.5,
+        "stock": "4444",
+        "marca": "Apple",
+        "categoria": "celulares",
+        "id": 1,
+        "envio": false,
+        "cantidad": 3
+      },
+      {
+        "nombre": "IPhone 12",
+        "foto": "imgs/apple-iphone-12.jpg",
+        "detalles": "Quasi cupiditate quisquam facere molestiae",
+        "precio": 240.3,
+        "stock": "4",
+        "marca": "Apple",
+        "categoria": "celulares",
+        "id": 2,
+        "envio": true,
+        "cantidad": 1
+      },
+      {
+        "nombre": "Auriculares Sony",
+        "foto": "imgs/auriculares-sony.jpg",
+        "detalles": "Saepe enim ipsa facilis velit quidem voluptatibus totam dicta",
+        "precio": 985,
+        "stock": 4,
+        "marca": "Sleek Cotton Chips",
+        "categoria": "Refined",
+        "id": 3,
+        "envio": false,
+        "cantidad": 3
+      }
+    ],
+    {
+      "0": {
+        "nombre": "BMW Strom 250cc",
+        "foto": "imgs//bmw strom 250.jpg",
+        "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
+        "precio": 250.5,
+        "stock": "43",
+        "marca": "Apple",
+        "categoria": "celulares",
+        "id": "1",
+        "envio": false,
+        "cantidad": 3
+      },
+      "id": "1749"
+    },
+    {
+      "id": "3414",
+      "createAt": 1743886367675,
+      "cantidad": 2,
+      "carrito": [
+        {
+          "nombre": "Bajaj Dominar 400cc 2023",
+          "foto": "imgs/dominar 400.png",
+          "detalles": "Deportiva y touring, ideal para viajes largos con excelente potencia y confort.",
+          "precio": 240.3,
+          "stock": "4",
+          "marca": "Apple",
+          "categoria": "celulares",
+          "id": "2",
+          "envio": true,
+          "cantidad": 2
+        },
+        {
+          "nombre": "BMW Strom 250cc",
+          "foto": "imgs//bmw strom 250.jpg",
+          "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
+          "precio": 250.5,
+          "stock": "43",
+          "marca": "Apple",
+          "categoria": "celulares",
+          "id": "1",
+          "envio": false,
+          "cantidad": 2
+        }
+      ]
+    }
+  ]
+}

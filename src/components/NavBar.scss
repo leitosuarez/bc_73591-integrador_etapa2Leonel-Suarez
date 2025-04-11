@@ -1,0 +1,77 @@
+/* 
+--------------------------
+NAVBAR
+--------------------------
+ */
+ .nav-bar {
+    background-color: #18141c;
+    display: none; 
+
+    &__nav-list { /* .nav-bar__nav-list */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        list-style-type: none;
+        /* padding: 0 9rem .5rem 9rem; */
+        
+        
+        
+    }
+
+    &__nav-item {
+        align-self: center;
+        
+    }
+
+    &__nav-link {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        padding: 1rem .5rem .2rem .5rem ; 
+        width: 7rem;
+        background-color: #18141c;
+        color: #d41c23;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 2px solid #18141c;
+        transition: border .3s ease-in-out;
+        
+        
+        
+        
+        &:hover {
+            color: #990308;
+        }
+
+        
+        /* hover de los nav-link y tamaño de los mismos, funcionales solo en desktop */
+        @media  screen and (min-width: 992px) {
+
+            /* &{
+                padding: 1rem 2rem .6rem 2rem; 
+            } */
+            &:hover {
+                color: #990308;
+                border-bottom: 2px solid  #990308;
+                
+            }
+        }
+        }
+
+        /*  */
+
+    @media  screen and (min-width: 992px) {
+        &{
+            display: block;
+        }
+
+        &__nav-list {
+            flex-direction: row;
+        }
+
+    }
+
+    
+
+
+}

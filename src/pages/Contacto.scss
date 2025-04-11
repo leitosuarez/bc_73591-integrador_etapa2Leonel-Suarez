@@ -1,0 +1,205 @@
+/* Contenedor del formulario de contacto - formulario */
+.form-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: .4rem;
+    
+}
+
+/* Formulario de contacto - formulario */
+.form-contact {
+    border: 1px solid gray;
+    box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 13px 0 rgba(0,0,0,0.75);
+    max-width: 900px;
+    min-height: 800px;
+    
+
+    &__header {
+        text-align: center;
+        background: #18141c;
+        color: white;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 900;
+        padding: 2.5rem 1rem;
+        
+
+    }
+
+    &__header h2 {
+        border-radius: .7rem;
+        padding: 1rem .2rem;
+        background-image: linear-gradient( 109.6deg,  rgba(204,0,0,1) 11.2%, rgba(68,0,0,1) 100.6% );
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.7rem 1.5rem;
+        padding-top: 3.5rem;
+    }
+
+    &__form i {
+        color: #c9c9c9;
+    }
+
+    &__input {
+        width: 100%;
+        display: flex;
+        border: 1px solid rgb(201, 201, 201);
+        
+    }
+
+    &__input input {
+        color: rgb(201, 201, 201);
+        border: none;
+        width: 100%;
+        padding: 1rem .8rem;
+        padding-left: 0;
+    }
+
+    &__input input:focus {
+        outline: none;
+    }
+
+    &__input label {
+        display: flex;
+        justify-content: center;
+        padding: 1rem .8rem;
+    }
+
+    &__input textarea {
+        min-height: 10rem; ;
+        color: rgb(201, 201, 201);
+        border: none;
+        width: 100%;
+        padding: 1rem .8rem;
+        padding-left: 0;
+    }
+
+    &__input textarea:focus {
+        outline: none;
+    }
+
+    &__button {
+        /* width: 125px;
+        height: 37px; */
+        text-align: center;
+        color: white;
+        background-color: #d41c23;
+        border: none;
+        border-radius: 1rem;
+        font-size: 14px;
+        font-weight: 800;
+        margin-top: 2.4rem;
+        /* padding: .6rem .8rem; */
+        padding: .9rem 1.6rem;
+        box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+        -webkit-box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+        -moz-box-shadow: 1px 3px 8px -1px rgba(212,28,35,0.75);
+    }
+
+    &__button:hover {
+        cursor: pointer;
+        background-color: #990308;
+    }
+    
+}
+
+/* Formulario de contacto - info */
+.form-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    border: 1px solid gray;
+    box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 13px 0 rgba(0,0,0,0.75);
+    max-width: 900px;
+    min-height: 800px;
+
+    &__info-header {
+        padding: 2rem;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.5rem;
+        background-color: #18141c;
+        color: #d41c23;
+        
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: .6rem;
+    }
+
+    &__item i {
+        color:#ffffff ;
+        margin-right: .5rem;
+    }
+ 
+    &__item div span {
+        font-weight: 900;
+        font-size: 17px;
+    }
+
+    &__map {
+        height: 546px;
+    }
+
+    @media  screen and (min-width: 1300px) {
+        &__info-header {
+            min-height: 156px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+            grid-template-rows: 1fr; /* Solo 1 fila */
+        }
+
+        &__map {
+            height: 644px;
+        }
+
+    }
+
+}
+
+/* Responsive */
+@media  screen and (min-width: 992px) {
+    .form-container {
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     justify-items: center;
+     
+     
+     
+    } 
+    .form-contact, .form-info {
+     width: 100%;
+    }
+}
+
+@media screen and (min-width: 1320px){
+    .form-container {
+        padding: .4rem 4rem;
+    }
+
+    .form-contact, .form-info {
+        min-height: 800px;
+    }
+
+}
+
+
+

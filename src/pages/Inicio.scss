@@ -1,0 +1,29 @@
+.section-cards {
+    background-color: #f1f2f3;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+
+    &__header span {
+        color: #d41c23;
+        font-style: italic;
+        font-weight: 800;
+    }
+    
+}
+
+.cards-container {
+    background-color: #0b090c;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1.3rem;
+}
+.cards-container {
+    padding: 2.5rem 0;
+}
+
+@media  screen and (min-width: 992px){
+    .cards-container {
+        padding: 2.8rem;
+    }
+}

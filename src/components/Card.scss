@@ -1,0 +1,128 @@
+
+.card {
+    position: relative;
+    min-width: 500px;
+    max-width: 550px;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    background-color: #18141c;
+    cursor: pointer;
+    
+    box-shadow: 0 7px 8px 0 rgba(0,0,0,0.5);
+    transition: transform .2s; //No puede ser all!
+    
+
+    &:hover, &:focus {
+        transform: scale(1.03) rotate(2deg);
+        transform-origin: bottom;
+        box-shadow: 0 7px 8px 0 rgba(0,0,0,0.5);
+
+        .card__image {
+            opacity: 0.8;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+    }
+
+
+    &__article {
+        display: flex;
+        
+    }
+
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3 ease;
+        
+    }
+
+    &__image-container {
+        min-width: 250px;
+        max-width: 250px;
+        background-position: center;
+        background-size: contain;
+        height: 200px;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%); // estado inicial
+        
+        
+    }
+
+
+    &__content {
+        min-width: 150px;
+        max-width: 200px;
+        color: white;
+        padding: 0 .5rem;
+        
+    }
+
+
+    &__content span {
+        position: absolute;
+        bottom: 2rem;
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: #d41c23;
+    }
+
+    &__content p {
+        margin-top: .4rem;
+    }
+
+    &:hover &__image-container, &:focus &__image-container {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); //estado final
+        
+    } 
+
+    &__buy-button {
+        margin-top: .5rem;
+        max-width: 11rem;
+        text-align: center;
+        color: white;
+        background-color: #d41c23;
+        border: none;
+        font-size: 13px;
+        font-weight: 800;
+        padding: .7rem 1.2rem;
+        border-radius: .5rem;
+        cursor: pointer;
+    }
+
+    &__buy-button:hover {
+        background-color: #9b1318;
+    }
+
+    /* Responsive */
+    @media screen and (min-width: 992px) {
+        & {
+            width: 220px;
+            max-width: 300px;
+            height: 400px;
+        }
+
+        &__article{ //card
+            flex-direction: column;
+        }
+
+        &__image-container { 
+            clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px);
+            max-width: none;
+        }
+
+        &__content {
+            min-width: none;
+            max-width: none;
+        }
+
+        &:hover &__image-container, &:focus &__image-container {
+            clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px);
+        }
+
+    }
+    
+}

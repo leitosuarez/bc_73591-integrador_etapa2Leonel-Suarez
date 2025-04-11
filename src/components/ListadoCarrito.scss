@@ -1,0 +1,20 @@
+.tabla-carrito {
+    border: 1px solid black;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin: 0 auto;
+
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: .5rem;
+        text-align: left;
+        width: 100%;
+        min-width: 15rem;
+    }
+
+    thead {
+        background-color: rgb(185, 178, 178);
+    }
+}

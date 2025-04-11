@@ -1,0 +1,160 @@
+/* 
+--------------------------
+SEARCHBAR
+--------------------------
+ */
+ .search-bar{
+    display: flex;
+    justify-content: space-around; 
+    color: white;
+    background-color: #18141c;
+   /*  padding: .6rem .2rem; */
+   @media screen and (min-width:992px) {
+    & {
+        justify-content: center;
+    }
+   }
+    
+
+    &__logo-container {
+        width: 8.5rem;
+        min-height:5rem ;       
+        background-image: url('/imgs/logo.png');
+        background-position: center;
+        background-size:contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        
+    }
+
+    &__form-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 1;
+        padding: 1rem; 
+        background-color: #18141c;
+        max-width: 60%; 
+        
+    }
+
+
+    &__form-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: .7rem;
+    }
+
+    &__form-search {
+        background-color: white;
+        color: rgb(177, 171, 171);
+        font-size: .8rem    ;
+        padding: .6rem  ;
+        border: none;
+        min-width: 45%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+
+    &__form-search:focus {
+        outline: none;
+        border: 1px solid #d41c23;
+    }
+
+    &__carrito-container {
+        flex: 0 0 3rem; /* shorthand: buscar bien que es esto pero es como que define el tamaño */
+        text-decoration: none;
+        color: #ddd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .7rem  ;
+        padding-top: .2rem;
+        cursor: pointer;
+        
+        
+    }
+
+   /*  &__carrito-container p {
+        font-size: 10px;
+        text-align: right;
+        font-weight: 100;
+        text-decoration: none;
+    }  */
+
+    &__form-submit{
+        background-color: #d41c23;
+        color: white;
+        font-size: .9rem;
+        font-weight: 600;
+        border: none;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 0 1rem;
+        min-width: 10%;
+        cursor: pointer;
+        transition: ease .3s background-color;
+        
+    }
+
+    &__form-submit:hover{
+        background-color: #990308;
+        color: #18141c;
+        
+    }
+
+}
+
+/* 
+--------------------------
+menu-toogle
+--------------------------
+ */
+.menu-toogle {
+    display: block;
+    background-color: red;
+    flex: 0 0 3rem;
+    position: relative;
+
+    &__label {
+        display: block;
+        height: 100%;
+        background-color: #18141c;
+        cursor: pointer;
+    }
+
+    &__top-bread,
+    &__meat,
+    &__bottom-bread {
+        display: block;
+        background-color: white;
+        border-radius: 1px;
+        height: 0.2rem;
+        position: absolute;
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+
+    &__top-bread {
+        top: 1.4rem;
+    }
+
+    &__meat {
+        top: 50%; /* centrado verticalmente */
+        margin-top: -.1rem;
+        
+    }
+
+    &__bottom-bread{
+        bottom: 1.4rem;
+        
+    }
+
+    @media screen and (min-width:992px) {
+        & {
+            display: none;
+        }
+    }
+}

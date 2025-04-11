@@ -1,0 +1,18 @@
+.tabla-alta {
+    border: 1px solid black;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    overflow-x: auto;
+
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: .5rem;
+        text-align: left;
+        max-width: 20rem;
+    }
+
+    thead {
+        background-color: rgb(211, 207, 207);
+    }
+}
