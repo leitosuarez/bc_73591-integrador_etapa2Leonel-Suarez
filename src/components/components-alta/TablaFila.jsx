@@ -35,20 +35,27 @@ const TablaFila = ({producto}) => {
         </div>
       </td>
       <td><div>{producto.envio ? 'Si' : 'No'}</div></td>
-      <td>
-        <button>
+      <td className='tabla-fila-alta__acciones'>
+        <div>
+        <button className='boton-ver'>
+        <i class="fa-regular fa-eye"></i>
           Ver
         </button>
         <button
+        className='boton-editar'
         onClick={()=>{handleEditar(producto)}}
         >
+          <i class="fa-regular fa-pen-to-square"></i>
           Editar
         </button>
         <button
+        className='boton-eliminar'
         onClick={()=> {handleEliminar(producto.id)}}
         >
+          <i class="fa-solid fa-trash"></i>
           Borrar
         </button>
+        </div>
       </td>
     </tr>
   )

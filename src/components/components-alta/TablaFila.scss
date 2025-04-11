@@ -1,4 +1,5 @@
 .tabla-fila-alta {
+   
     td div {
         height: 2.7rem;
         display: flex;
@@ -14,7 +15,6 @@
     }
 
     &__categoria span {
-        text-transform: capitalize;
         color: #3b0f10;
         background-color: #d41c23;
         padding: .3rem;
@@ -35,6 +35,53 @@
             mix-blend-mode: multiply;
         }
     }
+
+    &__acciones div{
+        gap: .4rem;
+        
+    }
    
-    
+}
+
+/* button styles */
+.boton-ver, .boton-editar, .boton-eliminar {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    padding: .5rem .7rem;
+    gap: .4rem;
+    text-align: center;
+    font-weight: 800;
+    color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+}
+
+
+.boton-editar {
+    background-color: rgb(0, 110, 255);
+}
+
+.boton-editar:hover {
+    background-color: rgb(6, 82, 180);
+}
+
+.boton-eliminar {
+    background-color: inherit;
+    color: #ac1c21;
+    border: 2px solid #ac1c21;
+}
+
+.boton-eliminar:hover {
+    background-color: inherit;
+    color: #ff0008;
+    border: 2px solid #ff0008;
+}
+
+.boton-ver {
+    background-color: gray;
+}
+
+.boton-ver:hover {
+    background-color: rgb(112, 111, 111);
 }

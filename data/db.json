@@ -12,17 +12,6 @@
       "envio": false
     },
     {
-      "nombre": "Bajaj Dominar 400cc 2023",
-      "foto": "imgs/dominar 400.png",
-      "detalles": "Deportiva y touring, ideal para viajes largos con excelente potencia y confort.",
-      "precio": 240.3,
-      "stock": "4",
-      "marca": "Apple",
-      "categoria": "celulares",
-      "id": "2",
-      "envio": true
-    },
-    {
       "nombre": "Auriculares Sony",
       "foto": "imgs/cf-moto-600.webp",
       "detalles": "Saepe enim ipsa facilis velit quidem voluptatibus totam dicta",
