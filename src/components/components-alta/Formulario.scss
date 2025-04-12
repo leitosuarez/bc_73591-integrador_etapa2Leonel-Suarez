@@ -16,6 +16,7 @@
     transform: scale(0.5); */
     transition: .3s;
     box-shadow: 0 0 0 500vmax rgba(0,0,0,.5);
+    z-index: 1;
 
     .editar-guardar-boton, .reset-boton {
         border-radius: 6px;
@@ -89,20 +90,27 @@
     }
 }
 
-/* @media  screen and (max-width: 570px) {
-    .formulario-alta {
-        left: 1.5rem;
-    }
-}
 
-@media  screen and (max-width: 1200px) {
+/* Responsive modal */
+@media  screen and (max-width: 1100px) {
     .formulario-alta {
-        left: 20vw;
+        left: 20%;
+        right: 25%;
         }
     }
 
-    @media  screen and (max-width: 570px) {
+@media  screen and (max-width: 850px) {
         .formulario-alta {
-            left: 1.5rem;
-        }
-    } */
+            min-width: 70%;
+            left: 13vw;
+            right: 15%;
+            }
+    }
+
+    @media  screen and (max-width: 650px) {
+        .formulario-alta {
+            min-width: 90%;
+            left: 5%;
+            right: 10vw;
+            }
+    }
