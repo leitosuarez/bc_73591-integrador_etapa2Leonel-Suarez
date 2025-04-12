@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
+import	'./Formulario.scss'
 
-const Forumulario = () => {
+const Forumulario = ({showForm, handleShowModal}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
 
@@ -43,6 +44,7 @@ const Forumulario = () => {
 
         handleReset()
       }   tambien podria usar esta logica*/
+      handleShowModal()
   }
 
   const handleChange = (e)=> {
@@ -71,9 +73,9 @@ const Forumulario = () => {
 
 
   return (
-   <>
+   <div className="formulario-alta" style={ showForm ? {visibility: "visible", opacity: "initial", transform: "scale(1)"} : {visibility: "hidden", opacity: "0", transform: "scale(0.5)"}}>
    <h2>Agrear: Editar</h2>
-
+   <div className="close-window" onClick={handleShowModal}>X</div>
    <form action="">
     <div>
       <label htmlFor="lbl-nombre">Nombre</label>
@@ -81,6 +83,7 @@ const Forumulario = () => {
       type="text" 
       id="lbl-nombre" 
       name="nombre" 
+      placeholder="Nombre del producto"
       value={form.nombre} 
       onChange={handleChange}/>
     </div>
@@ -138,7 +141,7 @@ const Forumulario = () => {
       value={form.foto} 
       onChange={handleChange}/>
     </div>
-    <div>
+    <div className="envio-input">
       <label htmlFor="lbl-envio">Envio</label>
       <input 
       type="checkbox" 
@@ -149,10 +152,20 @@ const Forumulario = () => {
       />
     </div>
 
-    <button type="submit" onClick={handleSubmit}>{productoAEditar ? 'Editar' : 'Guardar'}</button>
-    <button type="reset" onClick={handleReset}>Resetear</button>
+    <button
+    className="editar-guardar-boton"
+    type="submit" 
+    onClick={handleSubmit}>
+    {productoAEditar ? 'Editar' : 'Guardar'}
+    </button>
+    <button
+    className="reset-boton"
+    type="reset" 
+    onClick={handleReset}>
+    Resetear
+    </button>
    </form> 
-   </>
+   </div>
   )
 }
 
