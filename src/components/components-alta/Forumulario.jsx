@@ -1,16 +1,25 @@
 import { useContext, useEffect, useState } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
 import	'./Formulario.scss'
+import ShowModalContext from "../../contexts/ShowModalContext"
 
-const Forumulario = ({showForm, handleShowModal}) => {
+const Forumulario = ({}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
+
+  const { showModal,handleShowModal} = useContext(ShowModalContext)
 
   useEffect(() => {
     handleEditar()
   }, [productoAEditar])
   
-  
+  const handleShow = ()=> {
+    handleShowModal()
+
+    if (showModal) {
+      setForm(formInicial)
+    }
+  }
 
   const formInicial = {
       id: null,
@@ -73,9 +82,9 @@ const Forumulario = ({showForm, handleShowModal}) => {
 
 
   return (
-   <div className="formulario-alta" style={ showForm ? {visibility: "visible", opacity: "initial", transform: "scale(1)"} : {visibility: "hidden", opacity: "0", transform: "scale(0.5)"}}>
+   <div className="formulario-alta" style={ showModal ? {visibility: "visible", opacity: "initial", transform: "scale(1)"} : {visibility: "hidden", opacity: "0", transform: "scale(0.5)"}}>
    <h2>Agrear: Editar</h2>
-   <div className="close-window" onClick={handleShowModal}>X</div>
+   <div className="close-window" onClick={handleShow}>X</div>
    <form action="">
     <div>
       <label htmlFor="lbl-nombre">Nombre</label>
