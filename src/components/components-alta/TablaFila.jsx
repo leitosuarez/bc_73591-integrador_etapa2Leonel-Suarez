@@ -1,13 +1,19 @@
 import { useContext } from 'react'
 import './TablaFila.scss'
 import ProductosContext from '../../contexts/ProductosContext'
+import convertCurrency from '../../helpers/convert-currency'
+import ShowModalContext from '../../contexts/ShowModalContext'
 const TablaFila = ({producto}) => {
 
   const {actualizarProductos, eliminarProductos, setProductoAEditar} = useContext(ProductosContext)
+  
+  const {handleShowModal} = useContext(ShowModalContext)
+  
 
   const handleEditar = (producto)=> {
       //actualizarProductos(producto)
       setProductoAEditar(producto)
+      handleShowModal()
   }
 
   const handleEliminar = (id)=> {
@@ -25,7 +31,7 @@ const TablaFila = ({producto}) => {
           </span>
         </div>
       </td>
-      <td><div>{producto.precio}</div></td>
+      <td><div>{'$'+convertCurrency(producto.precio)}</div></td>
       <td><div>{producto.stock}</div></td>
       <td><div>{producto.marca}</div></td>
       {/* <td>* {producto.detalles} </td> */}
@@ -38,21 +44,21 @@ const TablaFila = ({producto}) => {
       <td className='tabla-fila-alta__acciones'>
         <div>
         <button className='boton-ver'>
-        <i class="fa-regular fa-eye"></i>
+        <i className="fa-regular fa-eye"></i>
           Ver
         </button>
         <button
         className='boton-editar'
         onClick={()=>{handleEditar(producto)}}
         >
-          <i class="fa-regular fa-pen-to-square"></i>
+          <i className="fa-regular fa-pen-to-square"></i>
           Editar
         </button>
         <button
         className='boton-eliminar'
         onClick={()=> {handleEliminar(producto.id)}}
         >
-          <i class="fa-solid fa-trash"></i>
+          <i className="fa-solid fa-trash"></i>
           Borrar
         </button>
         </div>

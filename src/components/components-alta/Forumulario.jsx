@@ -3,11 +3,11 @@ import ProductosContext from "../../contexts/ProductosContext"
 import	'./Formulario.scss'
 import ShowModalContext from "../../contexts/ShowModalContext"
 
-const Forumulario = ({}) => {
+const Forumulario = ({form, setForm}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
 
-  const { showModal,handleShowModal} = useContext(ShowModalContext)
+  const { showModal,handleShowModalCrear, handleShowModal} = useContext(ShowModalContext)
 
   useEffect(() => {
     handleEditar()
@@ -15,10 +15,6 @@ const Forumulario = ({}) => {
   
   const handleShow = ()=> {
     handleShowModal()
-
-    if (showModal) {
-      setForm(formInicial)
-    }
   }
 
   const formInicial = {
@@ -33,7 +29,7 @@ const Forumulario = ({}) => {
       envio: false
   }
 
-  const [form, setForm] = useState(formInicial)
+  //const [form, setForm] = useState(formInicial)
 
   const handleSubmit = (e)=> {
       e.preventDefault()
@@ -70,6 +66,7 @@ const Forumulario = ({}) => {
   const handleReset = ()=> {
       setForm(formInicial)
       setProductoAEditar(null)
+      
   }
 
   const handleEditar = ()=> {
@@ -83,7 +80,7 @@ const Forumulario = ({}) => {
 
   return (
    <div className="formulario-alta" style={ showModal ? {visibility: "visible", opacity: "initial", transform: "scale(1)"} : {visibility: "hidden", opacity: "0", transform: "scale(0.5)"}}>
-   <h2>Agrear: Editar</h2>
+   <h2>{productoAEditar ? 'Editar' : 'Agregar'}</h2>
    <div className="close-window" onClick={handleShow}>X</div>
    <form action="">
     <div>

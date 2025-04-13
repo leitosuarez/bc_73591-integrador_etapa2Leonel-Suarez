@@ -10,26 +10,27 @@ const ShowModalProvider = ({children}) => {
 
     const [showModal, setShowModal] = useState(false)
 
-    const handleShowModal = ()=> {
+    const handleShowModalCrear = ()=> {
+        
+        showModal ? setShowModal(false) : setShowModal(true)
+        console.log(showModal)
+        
         if(productoAEditar) {
             setProductoAEditar(null)
         }
-        console.log(productoAEditar)
-
-        showModal ? setShowModal(false) : setShowModal(true)
-        console.log(showModal)
+        console.log('prodaeditar',productoAEditar)
       }
 
-    const handleShowModalEditar = ()=> {
+    const handleShowModal = ()=> {
 
         showModal ? setShowModal(false) : setShowModal(true)
-        console.log(showModal)
+        console.log('showmodalstate',showModal)
     }
     
     const data = {
         showModal,
         handleShowModal,
-        handleShowModalEditar
+        handleShowModalCrear
     }
     return <ShowModalContext.Provider value={data}>{children}</ShowModalContext.Provider>
 
