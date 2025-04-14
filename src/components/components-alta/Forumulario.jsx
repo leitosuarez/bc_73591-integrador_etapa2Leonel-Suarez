@@ -62,19 +62,32 @@ const Forumulario = ({form, setForm}) => {
       }
     })
     
-    if(arrayCamposFalseIndex.length != 0) {
+
+    if(arrayCamposFalseIndex.length === 1) {
       
-      window.alert('No se puede agregar, completa con los datos necesarios')
       arrayCamposFalseIndex.forEach(falseIndex => {
         window.alert(`El campo ${formNames[falseIndex]} debe ser completado`)
       })
 
-      arrayCamposFalseIndex = []
+      window.alert(`El campo ${formNames[falseIndex]} debe ser completado`)
     }
+
+    if(arrayCamposFalseIndex.length > 1) {
+      let mensaje = ''
+
+      arrayCamposFalseIndex.forEach(falseIndex => {
+        namesFalseInputs.push(formNames[falseIndex])
+
+        mensaje+= formNames[falseIndex] + ', '
+      })
+
+      window.alert(`Los campos ${mensaje} deben ser completados`)
+    
+    }
+
     return requirements
 
   }
-
   const handleSubmit = (e)=> {
       e.preventDefault()
       
