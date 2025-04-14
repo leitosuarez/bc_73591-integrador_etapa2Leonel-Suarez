@@ -12,11 +12,13 @@ HEADER
     
     
     
+    
 
     @media screen and (min-width: 992px) {
         & {
             flex-direction: column-reverse;
             padding: 1rem 4rem; 
+            gap: 1.8rem;
         }
         
     }
@@ -27,7 +29,10 @@ HEADER
 
     /* hacer funcionar el checkboc -> hacer funcionar el menu hamburguesa */
     &:checked + .nav-bar{    
-        display: block; 
+        //display: block; 
+        max-height: 300px; // suficiente para contener el contenido
+        opacity: 1;
+        transform: translateY(0);
         
     }
 

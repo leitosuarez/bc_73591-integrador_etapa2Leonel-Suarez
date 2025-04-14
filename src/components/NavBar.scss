@@ -5,7 +5,19 @@ NAVBAR
  */
  .nav-bar {
     background-color: #18141c;
-    display: none; 
+    /* display: none; 
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+   */
+   max-height: 0;
+   opacity: 0;
+   overflow: hidden;
+   transform: translateY(-20px);
+   transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+   background-color: #18141c;
+    // Esto es cuando querés mostrarla
 
     &__nav-list { /* .nav-bar__nav-list */
         display: flex;
@@ -62,7 +74,11 @@ NAVBAR
 
     @media  screen and (min-width: 992px) {
         &{
-            display: block;
+            //  display: block;
+            max-height: none;
+            opacity: 1;
+            overflow:visible;
+            
         }
 
         &__nav-list {
