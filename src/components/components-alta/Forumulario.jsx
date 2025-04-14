@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
 import	'./Formulario.scss'
 import ShowModalContext from "../../contexts/ShowModalContext"
-
+import Swal from "sweetalert2"
 const Forumulario = ({form, setForm}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
@@ -31,25 +31,83 @@ const Forumulario = ({form, setForm}) => {
 
   //const [form, setForm] = useState(formInicial)
 
+  function checkInputs () {
+    debugger
+    const formContent = [form.nombre, form.precio, form.stock, form.categoria, form.marca, form.foto, form.detalles]
+
+    const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Foto', 'Detalles']
+    const arrayCamposFalseIndex = []
+    console.log(formContent)
+    let requirements = true
+    
+    const isNumberPrecio = Number(formContent[1])
+    const isNumberStock = Number(formContent[2])
+
+    formContent.forEach((input , index)=> {
+      if(input === "" || !isNumberPrecio || !isNumberStock ) {
+          
+        requirements = false
+
+        if(!isNumberPrecio && index === 1) {
+          window.alert(`El campo ${formNames[1]} debe ser un numero`)
+        } else {
+          if(input === "") {
+            arrayCamposFalseIndex.push(index)
+          }
+
+          if(!isNumberStock && index === 2) {
+            window.alert(`El campo ${formNames[2]} debe ser un numero`)
+          }
+        }
+      }
+    })
+    
+    if(arrayCamposFalseIndex.length != 0) {
+      
+      window.alert('No se puede agregar, completa con los datos necesarios')
+      arrayCamposFalseIndex.forEach(falseIndex => {
+        window.alert(`El campo ${formNames[falseIndex]} debe ser completado`)
+      })
+
+      arrayCamposFalseIndex = []
+    }
+    return requirements
+
+  }
+
   const handleSubmit = (e)=> {
       e.preventDefault()
       
-      if(form.id === null) {
-        crearProductos(form)
-      } else {
-        actualizarProductos(form)
-        handleReset()
+      console.log(checkInputs())
+
+      if(checkInputs()) {
+
+        if(form.id === null) {
+          crearProductos(form)
+          Swal.fire({
+            title: "¡Se agrego exitosamente!",
+            icon: "success",
+            draggable: true,
+            background: '#18141c',
+            color: '#f1f1f1',
+            confirmButtonColor: '#d41c23'
+          });
+        } else {
+          actualizarProductos(form)
+          handleReset()
+        }
+  /*       console.log(e.target.textContent)
+        if(e.target.textContent === 'Guardar') {
+          crearProductos(form)
+  
+        } else if(e.target.textContent === 'Editar') {
+          actualizarProductos(form)
+  
+          handleReset()
+        }   tambien podria usar esta logica*/
+        handleShowModal()
       }
-/*       console.log(e.target.textContent)
-      if(e.target.textContent === 'Guardar') {
-        crearProductos(form)
-
-      } else if(e.target.textContent === 'Editar') {
-        actualizarProductos(form)
-
-        handleReset()
-      }   tambien podria usar esta logica*/
-      handleShowModal()
+      
   }
 
   const handleChange = (e)=> {
