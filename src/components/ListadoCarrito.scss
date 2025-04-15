@@ -1,4 +1,4 @@
-.tabla-carrito {
+/* .tabla-carrito {
     border: 1px solid black;
     margin-top: 1rem;
     border-collapse: collapse;
@@ -16,5 +16,29 @@
 
     thead {
         background-color: rgb(185, 178, 178);
+    }
+} */
+.listado-carrito {
+    //max-width: 850px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &__productos {
+        background-color: #0b090c;
+        border-radius: 12px;
+        flex-grow: 3;
+        max-width: 850px;
+        
+    }
+
+    &__comprar {
+        background-color: #0b090c;
+        border: 2px solid #d41c23;
+        border-radius: 12px;
+        height: 300px;
+        width: 500px;
+        align-self: self-start;
     }
 }
