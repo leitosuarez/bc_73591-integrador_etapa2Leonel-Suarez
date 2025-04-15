@@ -8,7 +8,7 @@ const Carrito = () => {
   
   return (
     <div className="carrito-page">
-      <h1>Listado Carrito</h1>
+      <h1>Productos</h1>
       <hr />
       <ListadoCarrito/>
     </div>
