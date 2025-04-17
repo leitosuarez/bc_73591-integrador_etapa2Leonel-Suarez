@@ -3,8 +3,9 @@ import './TablaFila.scss'
 import ProductosContext from '../../contexts/ProductosContext'
 import convertCurrency from '../../helpers/convert-currency'
 import ShowModalContext from '../../contexts/ShowModalContext'
+import Swal from 'sweetalert2'
 const TablaFila = ({producto}) => {
-
+  
   const {actualizarProductos, eliminarProductos, setProductoAEditar} = useContext(ProductosContext)
   
   const {handleShowModal} = useContext(ShowModalContext)
@@ -18,7 +19,29 @@ const TablaFila = ({producto}) => {
 
   const handleEliminar = (id)=> {
     // Logica de SweetAleert
-      eliminarProductos(id)
+    Swal.fire({
+      title: "Estas seguro que deseas eliminar?",
+      text: "No podras revertir esta accion!",
+      icon: "warning",
+      color: '#f1f1f1',
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar!", 
+      background: '#18141c' 
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Eliminado!",
+          text: "Tu producto fue eliminado.",
+          icon: "success",
+          background: '#18141c' ,
+          color: '#f1f1f1',
+          confirmButtonColor: "#d41c23"
+        });
+        eliminarProductos(id)
+      }
+    });
   }
 
   return (
