@@ -21,8 +21,42 @@ const ListadoCarrito = () => {
 
 
   return (
-    <>
-    <table className='tabla-carrito'>
+    <div className="listado-carrito">
+    
+        <section className="listado-carrito__productos"> 
+            {
+                !carrito.length <= 0 ? (carrito.map((productoCarrito , idx) => {
+                    console.log(productoCarrito)
+                    return (
+                        <ItemCarrito productoCarrito={productoCarrito} key={idx}/>
+                    )
+                })) : 
+                
+                (
+                <div style={{textAlign: "center"}}>
+                    No Hay productos
+                </div>
+                )
+
+
+            }
+        </section>
+        {
+            !carrito.length <= 0 && (
+                <section className="listado-carrito__comprar">
+                    <button onClick={handleComprar}>Comprar</button>
+                    <button onClick={handleLimpiarCarrito}>Vaciar carrito</button>
+                </section>
+            )
+        }
+        
+    </div>
+  )
+}
+
+export default ListadoCarrito
+
+{/* <table className='tabla-carrito'>
         <thead>
             <tr>
                 <th>Foto</th>
@@ -54,9 +88,4 @@ const ListadoCarrito = () => {
                 <button onClick={handleComprar}>Comprar</button>
             </>
         )
-    }
-    </>
-  )
-}
-
-export default ListadoCarrito
+    } */}

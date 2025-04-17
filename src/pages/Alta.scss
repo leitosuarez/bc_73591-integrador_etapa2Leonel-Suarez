@@ -9,4 +9,24 @@ body{
     border-radius: 12px;
     padding-bottom: 2rem;
     overflow-x: auto;
+
+    &__header {
+        padding: 1rem;
+        padding-bottom: 0;
+
+        button {
+            margin-top: 1rem;
+            padding: .8rem 1rem;
+            color: #f1f1f1;
+            background-color: #006eef;
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+            font-weight: 600;
+
+            &:hover {
+                background-color: #1158aa;
+            }
+        }
+    }
 }

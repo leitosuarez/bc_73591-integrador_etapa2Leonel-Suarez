@@ -7,7 +7,7 @@ const Forumulario = ({form, setForm}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
 
-  const { showModal,handleShowModalCrear, handleShowModal} = useContext(ShowModalContext)
+  const { showModal, handleShowModal} = useContext(ShowModalContext)
 
   useEffect(() => {
     handleEditar()
@@ -32,7 +32,7 @@ const Forumulario = ({form, setForm}) => {
   //const [form, setForm] = useState(formInicial)
 
   function checkInputs () {
-    debugger
+    //debugger
     const formContent = [form.nombre, form.precio, form.stock, form.categoria, form.marca, form.foto, form.detalles]
 
     const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Foto', 'Detalles']
@@ -76,9 +76,8 @@ const Forumulario = ({form, setForm}) => {
       let mensaje = ''
 
       arrayCamposFalseIndex.forEach(falseIndex => {
-        namesFalseInputs.push(formNames[falseIndex])
-
         mensaje+= formNames[falseIndex] + ', '
+        //namesFalseInputs.push(formNames[falseIndex])
       })
 
       window.alert(`Los campos ${mensaje} deben ser completados`)
@@ -88,7 +87,9 @@ const Forumulario = ({form, setForm}) => {
     return requirements
 
   }
+  
   const handleSubmit = (e)=> {
+    debugger
       e.preventDefault()
       
       console.log(checkInputs())
