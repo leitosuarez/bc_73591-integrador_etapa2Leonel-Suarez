@@ -1,13 +1,17 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import CarritoContext from "../contexts/CarritoContext"
 import ItemCarrito from "./ItemCarrito"
 import './ListadoCarrito.scss'
+import convertCurrency from "../helpers/convert-currency"
 
 const ListadoCarrito = () => {
 
     const {carrito, limpiarCarritoContext, guardarCarritoBackend }= useContext(CarritoContext)
+    //const [productsCount, setProductsCount] = useState(0); 
     console.log(carrito)
+    
 
+    
     const handleComprar = () => {
         console.log('Comprando...')
         guardarCarritoBackend()
@@ -17,6 +21,23 @@ const ListadoCarrito = () => {
         console.log('Vaciando carrito...')
         limpiarCarritoContext()
     }
+
+    const getProductsData = (carrito)=> {
+        //debugger
+        let contador = 0
+        let totalPrecio = 0
+        
+        Array.isArray(carrito) && carrito.forEach((prod)=>{
+            contador += prod.cantidad
+            totalPrecio += prod.cantidad * prod.precio
+        })
+
+        return {contador,totalPrecio}
+
+    }
+
+    const cantidadProducts = getProductsData(carrito).contador
+    const totalPrecioProducts = getProductsData(carrito).totalPrecio
 
 
 
@@ -42,10 +63,23 @@ const ListadoCarrito = () => {
             }
         </section>
         {
-            !carrito.length <= 0 && (
+            carrito.length > 0 && (
                 <section className="listado-carrito__comprar">
-                    <button onClick={handleComprar}>Comprar</button>
-                    <button onClick={handleLimpiarCarrito}>Vaciar carrito</button>
+                    <h1>Resumen de la compra</h1>
+                    <div className="listado-carrito__comprar-info">
+                        <div>
+                            <h3>Total de prodcutos del carrito:</h3>
+                            <span>{cantidadProducts}</span>
+                        </div>
+                        <div>
+                            <h3>Precio final a pagar:</h3>
+                            <span>{'$'+convertCurrency(totalPrecioProducts)}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button onClick={handleComprar}>Comprar</button>
+                        <button onClick={handleLimpiarCarrito}>Vaciar carrito</button>
+                    </div>
                 </section>
             )
         }
