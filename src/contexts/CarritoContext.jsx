@@ -33,7 +33,17 @@ const CarritoProvider = ({children})=> {
             console.log('esta en el carrito')
             const productoCarrito = getProductoCarrito(producto)
             productoCarrito.cantidad += 1
-            window.localStorage.setItem('carrito', JSON.stringify(productoCarrito))
+            //window.localStorage.setItem('carrito', JSON.stringify(productoCarrito)) 
+            let indice = null
+            carrito.forEach((prod,idx) => {
+                if(prod.id === productoCarrito.id){ indice = idx}
+            });
+            console.log(indice)
+            const eliminado = carrito.splice(indice, 1)
+            console.log('prod reemplazado', eliminado)
+            agregarALCarrito(productoCarrito)
+
+            
         }
     }
 
