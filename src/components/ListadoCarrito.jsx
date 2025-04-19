@@ -42,9 +42,12 @@ const ListadoCarrito = () => {
 
 
   return (
-    <div className="listado-carrito">
+    <div /* className="listado-carrito" */ 
+    className={carrito.length <= 0 ? 'listado-carrito-none' : 'listado-carrito'}>
     
-        <section className="listado-carrito__productos"> 
+        <section /* className="listado-carrito__productos" */
+        className={carrito.length <= 0 ? 'listado-carrito-none__productos' : 'listado-carrito__productos'}
+        > 
             {
                 !carrito.length <= 0 ? (carrito.map((productoCarrito , idx) => {
                     console.log(productoCarrito)
@@ -55,7 +58,8 @@ const ListadoCarrito = () => {
                 
                 (
                 <div style={{textAlign: "center"}}>
-                    No Hay productos
+                    <h2>No hay productos ❌🏍️​</h2>
+                    <p>El carrito esta vacio, ¿qué esperas para adquirir la moto de tu sueños ? No durmai samurai!!...Ve a revisar la tienda y vislumbra tus ojos con las motos mas facheras que se venden de cordoba para el mundo.</p>
                 </div>
                 )
 
@@ -76,9 +80,13 @@ const ListadoCarrito = () => {
                             <span>{'$'+convertCurrency(totalPrecioProducts)}</span>
                         </div>
                     </div>
-                    <div>
-                        <button onClick={handleComprar}>Comprar</button>
-                        <button onClick={handleLimpiarCarrito}>Vaciar carrito</button>
+                    <div className="listado-carrito__comprar-footer">
+                        <button
+                        className="boton-comprar" 
+                        onClick={handleComprar}>Comprar carrito</button>
+                        <button
+                        className="boton-vaciar" 
+                        onClick={handleLimpiarCarrito}><i class="fa-solid fa-cart-arrow-down fa-xl"></i></button>
                     </div>
                 </section>
             )
