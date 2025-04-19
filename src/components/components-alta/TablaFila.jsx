@@ -46,6 +46,7 @@ const TablaFila = ({producto}) => {
 
   return (
     <tr className='tabla-fila-alta'>
+       
       <td className='tabla-fila-alta__nombre'><div>{producto.nombre}</div></td>
       <td className='tabla-fila-alta__categoria'>
         <div>
@@ -68,8 +69,13 @@ const TablaFila = ({producto}) => {
         <div>
         <button className='boton-ver'>
         <i className="fa-regular fa-eye"></i>
-          Ver
+          Ver  
         </button>
+        <div className='mostrar-detalles'>
+          <img src="" alt="" />
+          <h3 style={{alignSelf:'start'}}>Detalles del producto:</h3>
+          <p style={{alignSelf:'start'}}>{producto.detalles}</p>    
+        </div>
         <button
         className='boton-editar'
         onClick={()=>{handleEditar(producto)}}
