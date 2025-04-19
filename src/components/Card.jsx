@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import './Card.scss'
 import CarritoContext from '../contexts/CarritoContext'
-
+import convertCurrency from '../helpers/convert-currency.js'
 const Card = ({producto}) => {
 
   const {agregarProductoCarritoContext} = useContext(CarritoContext)
@@ -22,7 +22,7 @@ const Card = ({producto}) => {
             {/* <p>{producto.detalles}</p> */}
             <button className='card__buy-button' onClick={()=>handleAgregar(producto)}>Agregar al Carrito</button>
           </div>
-          <span>{producto.precio}</span>
+          <span>{'$' + convertCurrency(producto.precio)}</span>
       </div>
     </article>
   </div> 

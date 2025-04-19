@@ -7,11 +7,10 @@ const Carrito = () => {
   useTitulo('Carrito')
   
   return (
-    <div className="carrito-page">
+    <main className="carrito-page">
       <h1>Productos</h1>
-      <hr />
       <ListadoCarrito/>
-    </div>
+    </main>
   )
 }
 

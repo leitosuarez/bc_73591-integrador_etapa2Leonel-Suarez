@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import './ItemCarrito.scss'
 import convertCurrency from '../helpers/convert-currency'
-import { peticionesHttp } from '../helpers/peticiones-http'
 const ItemCarrito = ({productoCarrito}) => {
 
 
@@ -11,7 +10,7 @@ const ItemCarrito = ({productoCarrito}) => {
 
     
     const incrementCounter = (productoCarrito)=> {
-        //debugger
+        debugger
         agregarProductoCarritoContext(productoCarrito)
         setProductsCount(productsCount + 1)
 
