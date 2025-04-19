@@ -6,7 +6,7 @@ const CarritoContext = createContext()
 
 const CarritoProvider = ({children})=> {
 
-    const [agregarALCarrito, eliminarDelCarrito, limpiarElCarrito, carrito] = useLocalStorage('carrito', [])
+    const [agregarALCarrito, eliminarDelCarrito, limpiarElCarrito, carrito, actulizarCarrito] = useLocalStorage('carrito', [])
 
     function isInCarrito(producto) {
         //return true/false
@@ -39,9 +39,14 @@ const CarritoProvider = ({children})=> {
                 if(prod.id === productoCarrito.id){ indice = idx}
             });
             console.log(indice)
-            const eliminado = carrito.splice(indice, 1)
+
+            const nuevoCarrito = [...carrito]
+            const eliminado = nuevoCarrito.splice(indice, 1)
             console.log('prod reemplazado', eliminado)
-            agregarALCarrito(productoCarrito)
+            nuevoCarrito.splice(indice, 0, productoCarrito)
+            actulizarCarrito(nuevoCarrito)
+            window.localStorage.setItem('carrito', JSON.stringify(nuevoCarrito))
+            //agregarALCarrito(productoCarrito)
 
             
         }
