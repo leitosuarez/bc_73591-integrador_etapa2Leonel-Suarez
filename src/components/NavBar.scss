@@ -20,6 +20,7 @@ NAVBAR
     // Esto es cuando querés mostrarla
 
     &__nav-list { /* .nav-bar__nav-list */
+        padding-top: .8rem;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
