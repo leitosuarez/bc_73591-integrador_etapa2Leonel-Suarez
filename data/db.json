@@ -4,7 +4,7 @@
       "nombre": "BMW Strom 250cc",
       "foto": "imgs//bmw strom 250.jpg",
       "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
-      "precio": 250.5,
+      "precio": "255.5",
       "stock": "43",
       "marca": "Apple",
       "categoria": "celulares",
@@ -73,7 +73,7 @@
       "stock": "2",
       "marca": "Sorny",
       "categoria": "Electronica",
-      "detalles": "Piola. 8k",
+      "detalles": "Lorem ipsum dolor sit amet,incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
       "foto": "imgs/kawasaki z400.webp",
       "envio": true
     },
@@ -83,66 +83,13 @@
       "precio": "123.44",
       "stock": "5",
       "categoria": "Tecnología",
-      "detalles": "loremkimpis",
+      "detalles": "Lorem ipsum dolor elit. Sed do eiusmod tempor incididunt ut labore  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       "marca": "apple",
       "foto": "imgs/kawasaki z400.webp",
       "envio": false
     }
   ],
   "carrito": [
-    [
-      {
-        "nombre": "IPhone 15 Pro Max",
-        "foto": "imgs/apple-iphone-11-pro-max.jpg",
-        "detalles": "Lorem ipsum dolor sit, amet consectetur adipisicing.",
-        "precio": 250.5,
-        "stock": "4444",
-        "marca": "Apple",
-        "categoria": "celulares",
-        "id": 1,
-        "envio": false,
-        "cantidad": 3
-      },
-      {
-        "nombre": "IPhone 12",
-        "foto": "imgs/apple-iphone-12.jpg",
-        "detalles": "Quasi cupiditate quisquam facere molestiae",
-        "precio": 240.3,
-        "stock": "4",
-        "marca": "Apple",
-        "categoria": "celulares",
-        "id": 2,
-        "envio": true,
-        "cantidad": 1
-      },
-      {
-        "nombre": "Auriculares Sony",
-        "foto": "imgs/auriculares-sony.jpg",
-        "detalles": "Saepe enim ipsa facilis velit quidem voluptatibus totam dicta",
-        "precio": 985,
-        "stock": 4,
-        "marca": "Sleek Cotton Chips",
-        "categoria": "Refined",
-        "id": 3,
-        "envio": false,
-        "cantidad": 3
-      }
-    ],
-    {
-      "0": {
-        "nombre": "BMW Strom 250cc",
-        "foto": "imgs//bmw strom 250.jpg",
-        "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
-        "precio": 250.5,
-        "stock": "43",
-        "marca": "Apple",
-        "categoria": "celulares",
-        "id": "1",
-        "envio": false,
-        "cantidad": 3
-      },
-      "id": "1749"
-    },
     {
       "id": "3414",
       "createAt": 1743886367675,
@@ -171,6 +118,44 @@
           "id": "1",
           "envio": false,
           "cantidad": 2
+        }
+      ]
+    },
+    {
+      "id": "2892",
+      "createAt": 1744936218469,
+      "cantidad": 1,
+      "carrito": [
+        {
+          "nombre": "BMW Strom 250cc",
+          "foto": "imgs//bmw strom 250.jpg",
+          "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
+          "precio": "255.5",
+          "stock": "43",
+          "marca": "Apple",
+          "categoria": "celulares",
+          "id": "1",
+          "envio": false,
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "id": "f981",
+      "createAt": 1745023116515,
+      "cantidad": 1,
+      "carrito": [
+        {
+          "nombre": "BMW Strom 250cc",
+          "foto": "imgs//bmw strom 250.jpg",
+          "detalles": "Trail compacta, perfecta para aventuras urbanas y off-road ligeras.",
+          "precio": "255.5",
+          "stock": "43",
+          "marca": "Apple",
+          "categoria": "celulares",
+          "id": "1",
+          "envio": false,
+          "cantidad": 1
         }
       ]
     }

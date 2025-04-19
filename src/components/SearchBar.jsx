@@ -1,7 +1,28 @@
 import { Link } from 'react-router'
 import './SearchBar.scss'
-
+import {useContext, useEffect, useState} from 'react'
+import CarritoContext from '../contexts/CarritoContext'
 const SearchBar = () => {
+  
+  const {carrito} = useContext(CarritoContext)
+  console.log(carrito)
+
+  const [cambioEstado, setCambioEstado] = useState(false)
+
+  useEffect(() => {
+    //debugger
+    animacion()
+    setTimeout(()=>{setCambioEstado(false)}, 1000)
+  }, [carrito])
+
+
+  const animacion = ()=> {
+    cambioEstado ? setCambioEstado(false) : setCambioEstado(true)
+  
+  }
+  
+
+ 
   return (
     <div className="search-bar">
     <div className="search-bar__logo-container"></div>
@@ -10,7 +31,7 @@ const SearchBar = () => {
       <input type="search" id="busqueda" className="search-bar__form-search" placeholder="Buscar Aqui"/>
       <button type="submit" className="search-bar__form-submit">Buscar</button>
     </form>
-    <Link to='/carrito' className="search-bar__carrito-container"><i className="fa-solid fa-cart-shopping fa-2xl"></i> {/* <p>Cart</p> */} </Link>
+    <Link to='/carrito' className="search-bar__carrito-container"><i className={!cambioEstado ? 'fa-solid fa-cart-shopping fa-2xl' : "fa-solid fa-cart-shopping fa-2xl fa-bounce"}></i> {/* <p>Cart</p> */} </Link>
     <div className="menu-toogle">
       
       <label htmlFor="menu" className="menu-toogle__label" >

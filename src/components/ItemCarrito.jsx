@@ -10,7 +10,7 @@ const ItemCarrito = ({productoCarrito}) => {
 
     
     const incrementCounter = (productoCarrito)=> {
-        debugger
+        //debugger
         agregarProductoCarritoContext(productoCarrito)
         setProductsCount(productsCount + 1)
 

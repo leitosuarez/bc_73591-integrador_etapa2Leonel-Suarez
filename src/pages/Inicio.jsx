@@ -13,8 +13,7 @@ const Inicio = () => {
     <main>
       <section className="section-cards">       
         <header className="section-cards__header">
-          <h1>Tu <span>pasión</span> por las motos comienza aquí, encuentra la moto de tus sueños al mejor precio.</h1>  
-          <p>Se encontraron X productos</p> 
+          {/* Slider */}
         </header> 
       </section>
 
