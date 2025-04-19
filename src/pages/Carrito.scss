@@ -1,4 +1,14 @@
 .carrito-page {
     max-width: 1300px;
-    margin: 2rem auto;
+    margin: 5rem auto;
+    background-color: #18141c ;
+    max-width: 80vw;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    padding-bottom: 2rem;
+    overflow-x: auto;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
 }

@@ -2,18 +2,20 @@
 import { useState } from "react"
 
 export const useLocalStorage = (clave, valorInicial = []) => {
+
     
         const getValorAlmacenado = () => {
     
             try {
                 const valorAlmacenado = window.localStorage.getItem(clave)
-                return valorAlmacenado ? JSON.parse(valorAlmacenado) : valorInicial
+                return valorAlmacenado && Array.isArray(JSON.parse(valorAlmacenado))? JSON.parse(valorAlmacenado) : valorInicial
             } catch (error) {
                 console.error(`Error al obtener ${clave} del localStorage ${error}`)
                 return valorInicial
             }
     
         }
+
     
         const [valorAlmacenado, setValorAlmacenado] = useState(getValorAlmacenado())
     
