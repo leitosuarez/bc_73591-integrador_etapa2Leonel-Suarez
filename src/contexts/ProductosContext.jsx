@@ -55,7 +55,7 @@ const ProductosProvider = ({children})=> {
         //if (productoAEditar === null) {setProductoAEditar(productoActualizar)}
         //setProductoAEditar(productoActualizar)
         //console.log(productoActualizar)
-        const urlProducto = url + productoActualizar.id
+        const urlProducto = url +'/'+productoActualizar.id
 
         try {
 
@@ -83,7 +83,8 @@ const ProductosProvider = ({children})=> {
 
     const eliminarProductos = async (id)=> {
         //console.log(id)
-        const urlProducto = url + id
+        //debugger
+        const urlProducto = url +'/'+id
         
         try {
 
