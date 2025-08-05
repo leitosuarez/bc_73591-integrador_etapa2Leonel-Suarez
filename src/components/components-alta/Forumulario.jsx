@@ -46,8 +46,11 @@ const Forumulario = ({form, setForm}) => {
 
     const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Detalles']
     const arrayCamposFalseIndex = []
-    console.log(formContent)
+    const arrayCamposNumberFalse = []
+    //console.log(formContent)
     let requirements = true
+    let error = ''
+    let errorNumber = ''
     
     const isNumberPrecio = Number(formContent[1])
     const isNumberStock = Number(formContent[2])
@@ -57,28 +60,27 @@ const Forumulario = ({form, setForm}) => {
           
         requirements = false
 
-        if(!isNumberPrecio && index === 1) {
-          window.alert(`El campo ${formNames[1]} debe ser un numero`)
+        if(!isNumberPrecio && index === 1 || !isNumberStock && index === 2) {
+          //window.alert(`El campo ${formNames[1]} debe ser un numero`)
+          arrayCamposNumberFalse.push(formNames[index])
+
         } else {
           if(input === "") {
             arrayCamposFalseIndex.push(index)
           }
-
-          if(!isNumberStock && index === 2) {
-            window.alert(`El campo ${formNames[2]} debe ser un numero`)
-          }
-        }
       }
-    })
+    }
+  })
     
 
     if(arrayCamposFalseIndex.length === 1) {
       
-      arrayCamposFalseIndex.forEach(falseIndex => {
-        window.alert(`El campo ${formNames[falseIndex]} debe ser completado`)
-      })
+      let falseIndex = arrayCamposFalseIndex[0]
+      let campoFalse = formNames[falseIndex]
 
-      window.alert(`El campo ${formNames[falseIndex]} debe ser completado`)
+      //window.alert(`El campo ${campoFalse} debe ser completado`)
+      error += `El campo ${campoFalse} debe ser completado`
+      //console.log(error)
     }
 
     if(arrayCamposFalseIndex.length > 1) {
@@ -88,12 +90,21 @@ const Forumulario = ({form, setForm}) => {
         mensaje+= formNames[falseIndex] + ', '
         //namesFalseInputs.push(formNames[falseIndex])
       })
-
-      window.alert(`Los campos ${mensaje} deben ser completados`)
-    
+      //window.alert(`Los campos ${mensaje} deben ser completados`)
+      error += `Los campos ${mensaje} deben ser completados`
+      console.log(error)
     }
 
-    return requirements
+
+    if (arrayCamposNumberFalse.length > 1) {
+        errorNumber += `Los campos ${arrayCamposNumberFalse.join(',')} deben ser un numero`
+    } 
+
+    if (arrayCamposNumberFalse.length === 1) {
+        errorNumber += `El campo ${arrayCamposNumberFalse[0]} deben ser un numero`
+    }
+
+    return {requirements,errorNumber,error}
 
   }
   
@@ -102,8 +113,9 @@ const Forumulario = ({form, setForm}) => {
       e.preventDefault()
       
       console.log(checkInputs())
+      const {requirements, errorNumber,error} = checkInputs()
 
-      if(checkInputs()) {
+      if(requirements) {
 
         const newProdWimage = {...form,...foto}
         //console.log('FOTOOO', foto)
@@ -115,7 +127,7 @@ const Forumulario = ({form, setForm}) => {
           newProdWimage.foto = foto
         }
 
-        console.log(newProdWimage)
+        //console.log(newProdWimage)
         if(form.id === null) {
           crearProductos(newProdWimage)
           Swal.fire({
@@ -140,6 +152,47 @@ const Forumulario = ({form, setForm}) => {
           handleReset()
         }   tambien podria usar esta logica*/
         handleShowModal()
+      } else {
+          if (error != '' && errorNumber != ''){
+            Swal.fire({
+                icon: "error",
+                iconColor:'#d41c23',
+                title: "Oops...",
+                text: `${errorNumber} y ademas \n${error}`,
+                background: '#18141c',
+                color: 'white',
+                confirmButtonColor: 'rgb(0, 110, 255)',
+                confirmButtonText: 'Entendido!'
+              });
+          } else {
+
+            if(errorNumber != '') {
+                Swal.fire({
+                  icon: "error",
+                  iconColor:'#d41c23',
+                  title: "Oops...",
+                  text: errorNumber,
+                  background: '#18141c',
+                  color: 'white',
+                  confirmButtonColor: 'rgb(0, 110, 255)',
+                  confirmButtonText: 'Entendido!'
+              
+                });
+            } else {
+              if (error != '') {
+                Swal.fire({
+                  icon: "error",
+                  iconColor:'#d41c23',
+                  title: "Oops...",
+                  text: error,
+                  background: '#18141c',
+                  color: 'white',
+                  confirmButtonColor: 'rgb(0, 110, 255)',
+                  confirmButtonText: 'Entendido!'
+                });
+              } 
+          }
+        }
       }
       
   }
