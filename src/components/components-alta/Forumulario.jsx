@@ -3,6 +3,7 @@ import ProductosContext from "../../contexts/ProductosContext"
 import	'./Formulario.scss'
 import ShowModalContext from "../../contexts/ShowModalContext"
 import Swal from "sweetalert2"
+import DragDrop from "./DragDrop"
 const Forumulario = ({form, setForm}) => {
 
   const {crearProductos, productoAEditar, setProductoAEditar, actualizarProductos} = useContext(ProductosContext)
@@ -16,6 +17,11 @@ const Forumulario = ({form, setForm}) => {
   const handleShow = ()=> {
     handleShowModal()
   }
+
+  /* Estados para gestioanr el drag and drop */
+  const placeholderImage = 'http://localhost:8080/uploads/placeholder-image.jpg'
+  const [foto, setfoto] = useState(placeholderImage) /* carga el usuario localmente */
+  const [srcImageBack, setSrcImageBack] = useState(placeholderImage)
 
   const formInicial = {
       id: null,
@@ -33,9 +39,12 @@ const Forumulario = ({form, setForm}) => {
 
   function checkInputs () {
     //debugger
-    const formContent = [form.nombre, form.precio, form.stock, form.categoria, form.marca, form.foto, form.detalles]
+    /* const formContent = [form.nombre, form.precio, form.stock, form.categoria, form.marca, form.foto, form.detalles]
 
-    const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Foto', 'Detalles']
+    const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Foto', 'Detalles'] */
+    const formContent = [form.nombre, form.precio, form.stock, form.categoria, form.marca,form.detalles]
+
+    const formNames = ['Nombre', 'Precio', 'Stock', 'Categoria', 'Marca', 'Detalles']
     const arrayCamposFalseIndex = []
     console.log(formContent)
     let requirements = true
@@ -89,15 +98,26 @@ const Forumulario = ({form, setForm}) => {
   }
   
   const handleSubmit = (e)=> {
-    debugger
+    //debugger
       e.preventDefault()
       
       console.log(checkInputs())
 
       if(checkInputs()) {
 
+        const newProdWimage = {...form,...foto}
+        //console.log('FOTOOO', foto)
+        if (newProdWimage.imagen){
+          newProdWimage.foto = newProdWimage.imagen
+          delete newProdWimage.imagen
+
+        } else {
+          newProdWimage.foto = foto
+        }
+
+        console.log(newProdWimage)
         if(form.id === null) {
-          crearProductos(form)
+          crearProductos(newProdWimage)
           Swal.fire({
             title: "¡Se agrego exitosamente!",
             icon: "success",
@@ -107,7 +127,7 @@ const Forumulario = ({form, setForm}) => {
             confirmButtonColor: '#d41c23'
           });
         } else {
-          actualizarProductos(form)
+          actualizarProductos(newProdWimage)
           handleReset()
         }
   /*       console.log(e.target.textContent)
@@ -138,6 +158,8 @@ const Forumulario = ({form, setForm}) => {
   const handleReset = ()=> {
       setForm(formInicial)
       setProductoAEditar(null)
+      setfoto(placeholderImage)
+      setSrcImageBack(placeholderImage)
       
   }
 
@@ -210,7 +232,7 @@ const Forumulario = ({form, setForm}) => {
       value={form.marca} 
       onChange={handleChange}/>
     </div>
-    <div>
+    {/* <div>
       <label htmlFor="lbl-foto">Foto</label>
       <input 
       type="text" 
@@ -218,7 +240,7 @@ const Forumulario = ({form, setForm}) => {
       name="foto" 
       value={form.foto} 
       onChange={handleChange}/>
-    </div>
+    </div> */}
     <div className="envio-input">
       <label htmlFor="lbl-envio">Envio</label>
       <input 
@@ -229,7 +251,7 @@ const Forumulario = ({form, setForm}) => {
       onChange={handleChange}
       />
     </div>
-
+    
     <button
     className="editar-guardar-boton"
     type="submit" 
@@ -242,7 +264,12 @@ const Forumulario = ({form, setForm}) => {
     onClick={handleReset}>
     Resetear
     </button>
-   </form> 
+  </form> 
+  <DragDrop 
+    setFoto={setfoto} 
+    setSrcImageBack={setSrcImageBack}
+    srcImageBack={srcImageBack}
+  /> 
    </div>
   )
 }
