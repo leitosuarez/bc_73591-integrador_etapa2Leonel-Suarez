@@ -20,6 +20,10 @@ const SearchBar = () => {
     cambioEstado ? setCambioEstado(false) : setCambioEstado(true)
   
   }
+
+  const handleSearch = (e)=>{
+      e.preventDefault()
+  }
   
 
  
@@ -29,7 +33,7 @@ const SearchBar = () => {
     <form action="#" className="search-bar__form-container">
       <label htmlFor="busqueda" className="search-bar__form-label"><i className="fa-solid fa-magnifying-glass fa-xl"></i></label>
       <input type="search" id="busqueda" className="search-bar__form-search" placeholder="Buscar Aqui"/>
-      <button type="submit" className="search-bar__form-submit">Buscar</button>
+      <button type="submit" className="search-bar__form-submit" onClick={handleSearch}>Buscar</button>
     </form>
     <Link to='/carrito' className="search-bar__carrito-container"><i className={!cambioEstado ? 'fa-solid fa-cart-shopping fa-2xl' : "fa-solid fa-cart-shopping fa-2xl fa-bounce"}></i> {/* <p>Cart</p> */} </Link>
     <div className="menu-toogle">
