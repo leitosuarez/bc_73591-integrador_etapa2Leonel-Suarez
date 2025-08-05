@@ -67,7 +67,6 @@ const CarritoProvider = ({children})=> {
         try {
             // para que json-server lo guarde como un array:
             const dataCarrito = {
-                createAt: Date.now(),
                 cantidad: carrito.length,
                 carrito
             }
@@ -89,9 +88,6 @@ const CarritoProvider = ({children})=> {
         }
     }
 
-    const calcularCantidadProductosCarrito = ()=> {
-        
-    }
 
     const data = {
         agregarProductoCarritoContext,

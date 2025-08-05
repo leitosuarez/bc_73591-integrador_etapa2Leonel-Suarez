@@ -40,7 +40,7 @@ const ProductosProvider = ({children})=> {
             }
 
             const nuevoProd = await peticionesHttp(url, options)
-            console.log(nuevoProd)
+            console.log('NUEVO PRODUCTO:',nuevoProd)
 
             const nuevoEstadoProductos = [...productos, nuevoProd]
             setProductos(nuevoEstadoProductos)

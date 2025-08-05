@@ -12,7 +12,7 @@ const TablaFila = ({producto}) => {
   
 
   const handleEditar = (producto)=> {
-    debugger
+    //debugger
       //actualizarProductos(producto)
       setProductoAEditar(producto)
       handleShowModal()
