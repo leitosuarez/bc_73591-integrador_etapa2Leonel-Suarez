@@ -116,7 +116,6 @@ const Forumulario = ({form, setForm}) => {
       const {requirements, errorNumber,error} = checkInputs()
 
       if(requirements) {
-
         const newProdWimage = {...form,...foto}
         //console.log('FOTOOO', foto)
         if (newProdWimage.imagen){
@@ -127,8 +126,7 @@ const Forumulario = ({form, setForm}) => {
           newProdWimage.foto = foto
         }
         
-
-        console.log(newProdWimage.foto)
+        //console.log(newProdWimage.foto)
         if(form.id === null) {
           crearProductos(newProdWimage)
           Swal.fire({

@@ -13,18 +13,18 @@ const ShowModalProvider = ({children}) => {
     const handleShowModalCrear = ()=> {
         
         showModal ? setShowModal(false) : setShowModal(true)
-        console.log(showModal)
+        //console.log(showModal)
         
         if(productoAEditar) {
             setProductoAEditar(null)
         }
-        console.log('prodaeditar',productoAEditar)
+        //console.log('prodaeditar',productoAEditar)
       }
 
     const handleShowModal = ()=> {
 
         showModal ? setShowModal(false) : setShowModal(true)
-        console.log('showmodalstate',showModal)
+        //console.log('showmodalstate',showModal)
     }
     
     const data = {
