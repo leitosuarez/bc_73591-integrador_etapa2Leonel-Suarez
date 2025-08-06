@@ -92,7 +92,7 @@ const Forumulario = ({form, setForm}) => {
       })
       //window.alert(`Los campos ${mensaje} deben ser completados`)
       error += `Los campos ${mensaje} deben ser completados`
-      console.log(error)
+      //console.log(error)
     }
 
 
@@ -107,12 +107,14 @@ const Forumulario = ({form, setForm}) => {
     return {requirements,errorNumber,error}
 
   }
+
+   
   
   const handleSubmit = (e)=> {
     //debugger
       e.preventDefault()
       
-      console.log(checkInputs())
+      //console.log(checkInputs())
       const {requirements, errorNumber,error} = checkInputs()
 
       if(requirements) {
@@ -126,8 +128,9 @@ const Forumulario = ({form, setForm}) => {
         } else {
           newProdWimage.foto = foto
         }
+        
 
-        //console.log(newProdWimage)
+        console.log(newProdWimage.foto)
         if(form.id === null) {
           crearProductos(newProdWimage)
           Swal.fire({
@@ -144,7 +147,7 @@ const Forumulario = ({form, setForm}) => {
         }
 
         handleShowModal()
-        
+
       } else {
           if (error != '' && errorNumber != ''){
             Swal.fire({
@@ -191,8 +194,11 @@ const Forumulario = ({form, setForm}) => {
   }
 
   const handleChange = (e)=> {
-
-      console.dir(e.target)
+      /* console.dir(e.target)
+      console.log(form)
+      console.log('foto',foto)
+      console.log('fotosrc',srcImageBack)
+      console.log('prodaeditar',productoAEditar) */
       const {type, name, checked, value} = e.target
 
       setForm({
@@ -212,8 +218,12 @@ const Forumulario = ({form, setForm}) => {
   const handleEditar = ()=> {
 
     if(productoAEditar != null) {
-      console.log(productoAEditar)
+      //console.log('prdoaeditar', productoAEditar)
+      setfoto(productoAEditar.foto)
+      setSrcImageBack(productoAEditar.foto)
       setForm({...productoAEditar}) 
+       
+      //setfoto(pro)
     }
   }
 

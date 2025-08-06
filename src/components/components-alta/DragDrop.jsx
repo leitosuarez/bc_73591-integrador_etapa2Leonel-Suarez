@@ -29,14 +29,14 @@ const DragDrop = ({setFoto, setSrcImageBack, srcImageBack}) => {
   }
 
   const handleFiles= async(files)=>{
-    console.log('recibi los files', files)
+    //console.log('recibi los files', files)
     const file = files[0]
     await uploadFile(file)
     previewFile(file)
   }
 
   const uploadFile = async(file)=>{
-    console.log('llego a upload', file)
+    //console.log('llego a upload', file)
     
 
     const url = import.meta.env.VITE_BACKEND_UPLOAD

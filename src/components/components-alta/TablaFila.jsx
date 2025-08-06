@@ -16,6 +16,7 @@ const TablaFila = ({producto}) => {
       //actualizarProductos(producto)
       setProductoAEditar(producto)
       handleShowModal()
+      console.log(producto)
   }
 
   const handleEliminar = (id)=> {
