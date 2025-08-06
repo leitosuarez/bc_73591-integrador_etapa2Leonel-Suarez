@@ -41,7 +41,7 @@ const ProductosProvider = ({children})=> {
             }
 
             const nuevoProd = await peticionesHttp(url, options)
-            console.log('NUEVO PRODUCTO:',nuevoProd)
+            //console.log('NUEVO PRODUCTO:',nuevoProd)
 
             const nuevoEstadoProductos = [...productos, nuevoProd]
             setProductos(nuevoEstadoProductos)
@@ -73,7 +73,7 @@ const ProductosProvider = ({children})=> {
             const nuevoEstadoProductos = productos.map(prod=>(
                 prod.id === productoActualizado.id ? productoActualizado : prod
             ))
-            console.log('prodcontextactualizado',nuevoEstadoProductos)
+            //console.log('prodcontextactualizado',nuevoEstadoProductos)
             setProductos(nuevoEstadoProductos)
 
         } catch (error) {
@@ -94,7 +94,7 @@ const ProductosProvider = ({children})=> {
             const nuevoEstadoProductos = productos.filter((prods) =>  prods.id != id)
 
             setProductos(nuevoEstadoProductos)
-            console.log(ProductoEliminado)
+            //console.log(ProductoEliminado)
 
         } catch (error) {
             console.error('[eliminarProductos]:', error)
