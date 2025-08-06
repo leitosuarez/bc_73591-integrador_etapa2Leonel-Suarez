@@ -1,5 +1,6 @@
 import {createContext, useEffect, useState } from "react";
-import { peticionesHttp } from "../helpers/peticiones-http";
+import { peticionesHttp } from "../helpers/peticiones-http.js";
+import validUrlConId from "../helpers/validar-url-con-id.js";
 
 
 const ProductosContext = createContext()
@@ -55,7 +56,8 @@ const ProductosProvider = ({children})=> {
         //if (productoAEditar === null) {setProductoAEditar(productoActualizar)}
         //setProductoAEditar(productoActualizar)
         //console.log(productoActualizar)
-        const urlProducto = url + productoActualizar.id
+        
+        const urlProducto = validUrlConId(url, productoActualizar.id)
 
         try {
 
@@ -71,7 +73,7 @@ const ProductosProvider = ({children})=> {
             const nuevoEstadoProductos = productos.map(prod=>(
                 prod.id === productoActualizado.id ? productoActualizado : prod
             ))
-            console.log(nuevoEstadoProductos)
+            console.log('prodcontextactualizado',nuevoEstadoProductos)
             setProductos(nuevoEstadoProductos)
 
         } catch (error) {
@@ -84,7 +86,7 @@ const ProductosProvider = ({children})=> {
     const eliminarProductos = async (id)=> {
         //console.log(id)
         //debugger
-        const urlProducto = url + id
+        const urlProducto = validUrlConId(url,id)
         
         try {
 
