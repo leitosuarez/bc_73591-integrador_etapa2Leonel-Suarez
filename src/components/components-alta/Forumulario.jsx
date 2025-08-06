@@ -142,16 +142,9 @@ const Forumulario = ({form, setForm}) => {
           actualizarProductos(newProdWimage)
           handleReset()
         }
-  /*       console.log(e.target.textContent)
-        if(e.target.textContent === 'Guardar') {
-          crearProductos(form)
-  
-        } else if(e.target.textContent === 'Editar') {
-          actualizarProductos(form)
-  
-          handleReset()
-        }   tambien podria usar esta logica*/
+
         handleShowModal()
+        
       } else {
           if (error != '' && errorNumber != ''){
             Swal.fire({
