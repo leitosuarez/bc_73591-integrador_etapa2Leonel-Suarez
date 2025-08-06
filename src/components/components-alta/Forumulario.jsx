@@ -108,8 +108,6 @@ const Forumulario = ({form, setForm}) => {
 
   }
 
-   
-  
   const handleSubmit = (e)=> {
     //debugger
       e.preventDefault()

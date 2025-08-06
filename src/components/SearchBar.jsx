@@ -5,7 +5,7 @@ import CarritoContext from '../contexts/CarritoContext'
 const SearchBar = () => {
   
   const {carrito} = useContext(CarritoContext)
-  console.log(carrito)
+  //console.log(carrito)
 
   const [cambioEstado, setCambioEstado] = useState(false)
 
