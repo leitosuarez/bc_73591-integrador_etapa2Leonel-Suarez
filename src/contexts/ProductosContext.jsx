@@ -53,10 +53,7 @@ const ProductosProvider = ({children})=> {
     }
     
     const actualizarProductos = async (productoActualizar)=> {
-        //if (productoAEditar === null) {setProductoAEditar(productoActualizar)}
-        //setProductoAEditar(productoActualizar)
-        //console.log(productoActualizar)
-        
+        //debugger
         const urlProducto = validUrlConId(url, productoActualizar.id)
 
         try {

@@ -1,6 +1,8 @@
 const validUrlConId = (url,id)=> {
             let urlCompleta = ''
-            if (url[-1] != '/') {
+    
+            const lastIndexUrl = url[url.length - 1]
+            if (lastIndexUrl != '/') {
                 urlCompleta = url + '/' + id
             } else {
                 urlCompleta = url + id
