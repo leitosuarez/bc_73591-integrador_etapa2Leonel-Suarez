@@ -19,7 +19,8 @@ const Forumulario = ({form, setForm}) => {
   }
 
   /* Estados para gestioanr el drag and drop */
-  const placeholderImage = 'http://localhost:8080/uploads/placeholder-image.jpg'
+  /* const placeholderImage = 'http://localhost:8080/uploads/placeholder-image.jpg' */
+  const placeholderImage = 'https://int-etapa-3-dlgc.onrender.com/uploads/placeholder-image.jpg'
   const [foto, setfoto] = useState(placeholderImage) /* carga el usuario localmente */
   const [srcImageBack, setSrcImageBack] = useState(placeholderImage)
 
