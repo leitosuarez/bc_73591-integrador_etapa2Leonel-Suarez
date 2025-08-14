@@ -105,6 +105,34 @@ SEARCHBAR
         
     }
 
+    @media screen and (max-width:510px){
+        &__form-label{
+            opacity: 0;
+            width: 0;
+            display: none;
+        }
+        &__carrito-container {
+            flex: 0 0 2rem; /* shorthand: buscar bien que es esto pero es como que define el tamaño */
+            
+        
+        
+        }
+        &__form-container {
+            padding: 1rem .3rem;
+            max-width: 55%;
+        }
+
+        &__form-submit{
+        font-size: .7rem;
+        padding: 0 .5rem;
+        min-width: auto;
+        }
+        &__logo-container {
+            min-width: 5rem;
+        }
+
+    }
+
 }
 
 /* 
